@@ -1,0 +1,254 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+
+
+body{
+	height: 100%;
+	width: 100%;
+}
+
+.modal-open .modal{
+    overflow-y: scroll;
+}
+
+.modalAesHeader{
+    padding: 0px !important;
+    background-color: #1f1e1c;
+}
+
+.modalAesHeader button{
+    color: white;
+    opacity: 1;
+    padding-right: 15px;
+}
+
+.projModalOuterTextBody{
+    background-color: #1f1e1c;
+    color: white;
+}
+
+.projModalOuterTextBody h1,h4,.devUsing{
+    color: #4aaca8;
+}
+
+.projModalOuterTextBody p{
+    font-size: 16px;
+}
+
+.devUsing{
+    color: #4aaca8;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.projModalOuterTextBody button{
+    color: #4aaca8;
+    border-radius: 0px;
+    border: 4px solid #4aaca8;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+.projModalOuterTextBody button:focus,button:hover,button:active{
+    color: white !important;
+}
+
+.fullPage{
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    text-align: center;
+    background-size: cover !important;
+
+}
+
+.topProjParagraphs{
+    padding-bottom: 25px;
+}
+
+.projTitles{
+    color: #1d494d;
+}
+
+.topProjParagraphs{
+    
+}
+
+#intro {
+    color: #fff;
+    background: #616161;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,#222c4f,#1d494d);
+    background: linear-gradient(to right, #222c4f,#1d494d);
+    background-color: #000;
+}
+
+#about {
+    color: #fff;
+    background-color: #222c4f;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#playground{
+    background-color: #ffffff;
+    padding: 25px 0px 0px 0px;
+}
+
+#pong-game{
+    background-color: #4aaca8
+}
+
+
+#intro .intro-body {
+    display: table-cell;
+    vertical-align: middle
+}
+
+#intro .intro-body .brand-heading {
+    font-size: 32px;
+    word-wrap: break-word
+}
+
+#intro .intro-body .intro-text {
+    font-size: 16px
+}
+
+#playground-well{
+    background: #4aaca8;
+}
+
+.navLink{
+	font-weight: bold;
+	color: white !important;
+}
+
+.navbar-brand{
+	padding: 0px;
+	color: #4aaca8 !important;
+}
+
+#custom-navbar-header{
+	margin-top: 0px !important;
+	padding: 6px 0px 0px 12px;
+}
+
+#my-name{
+	color: #4aaca8 !important;
+	font-weight: bold;
+}
+
+.aboutPicUnderlines{
+    margin:8px 0px 3px 0px;
+}
+
+.aboutImage{
+    max-height: 60px; 
+    max-width: 60px;
+}
+
+.aboutLabels{
+    margin:5px 0px 0px 0px;
+}
+
+.aboutTri{
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    #aboutHeaderIconBox{
+        margin-bottom: -1%;
+        padding-bottom: .5%;
+    }
+}
+
+@media (max-width: 700px) {
+    #aboutHeaderIconBox{
+        margin-bottom: -7%;
+        padding-bottom: 3.5%;
+    }
+}
+
+@media (max-width: 375px) {
+    #aboutHeaderIconBox{
+        margin-bottom: -7%;
+        padding-bottom: .5%;
+    }
+}
+#aboutEdu{
+    min-height: 50vh; 
+}
+
+.aboutDetail{
+    min-height: 60vh; 
+    display: flex; 
+    align-items: center;
+}
+
+#gitButton{
+    background-color: #1D494D !important; 
+    border-radius: 0 !important;
+    color: #ffffff; 
+}
+
+#gitButton:hover{
+    background-color: #ffffff !important; 
+    color: #1D494D !important; 
+}
+
+/*
+Timeline stuff
+*/
+.timeline-container {
+  max-width: 1024px;
+  width: 30%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.timeline-item {
+  padding: 3em 2em 2em;
+  position: relative;
+  border-left: 2px solid rgba(0, 0, 0, 0.3);
+}
+.timeline-item p {
+  font-size: 1rem;
+}
+
+.timeline-item h2 {
+    margin: 0px;
+}
+.timeline-item h3 {
+    margin-top: 10px;
+}
+.timeline-item::before {
+  content: attr(date-is);
+  position: absolute;
+  left: 2em;
+  font-weight: bold;
+  top: 1em;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.timeline-item::after {
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: 1em;
+  position: absolute;
+  left: -7px;
+  border-radius: 10px;
+  content: '';
+  background: white;
+}
+
+@media (max-width: 1024px) {
+    .timeline-container{
+        width: 90%;
+    }
+}
+

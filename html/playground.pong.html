@@ -1,0 +1,84 @@
+<div id="pong-game" class="fullPage">
+<h1 class="text-center">Customizable Pong!!</h1>
+
+<div id="deskTop" class="hidden-xs hidden-sm"></div>
+
+<div ng-init="initGame()" class="row text-center">
+	<button class="btn brn-primary" ng-click="startGame()">Start Game</button>
+	<button class="btn brn-primary" ng-click="restart()">Reset Game</button>
+</div>
+
+<br>
+</br>
+
+<div id="mainArea" class="row text-center game">
+	<!--Dont want to load this if on small screen-->
+	<div class="col-sm-2 text-center hidden-xs hidden-sm">
+
+		<h4><span class="label label-default">Player 1 Score </span></h4>
+		<h3><span class="label label-default">{{score1}}</span></h3>
+		<br></br>
+
+		<h3><span class="label label-default hidden-xs">Player 1 Speed: </span></h3>
+		<input class="hidden-xs"type="number" ng-model="playerSpeed"></p>
+		
+		<br></br>
+		
+		<h4><span class="label label-default">Player 1 Y </span></h4>
+		<h3><span class="label label-default">{{p1_y}}</span></h3>
+	</div>
+
+	<div class="col-xs-6 hidden-md hidden-lg">
+		<h4><span class="label label-default">Player 1 Score </span></h4>
+		<h3><span class="label label-default">{{score1}}</span></h3>
+	</div>
+	<div class="col-xs-6 hidden-md hidden-lg">
+		<h4><span class="label label-default">AI Score </span></h4>
+		<h3><span class="label label-default">{{score2}}</span></h3>
+	</div>
+
+	<!--Where the game will load, conditional based off screen type-->
+	<div class="col-sm-8 hidden-xs text-center" id="bigGame"></div>
+	
+	<div class="text-center" id="smallGame"></div>
+	
+	<!--Dont want to load this if on small screen-->
+	<div class="col-sm-2 text-center hidden-xs hidden-sm">
+		<h4><span class="label label-default">AI Score </span></h4>
+		<h3><span class="label label-default">{{score2}}</span></h3>
+		
+		<br></br>
+		
+		<h3><span class="label label-default">AI Speed: </span></h3>
+		<input type="number" ng-model="ai_s"></p>
+		
+		<br></br>
+		
+		<h4><span class="label label-default">Player 2 Y </span></h4>
+		<h3><span class="label label-default">{{p2_y}}</span></h3>
+	</div>
+	<br class="hidden-xs hidden-sm"></br>
+</div>
+
+<h2 class="hidden-xs hidden-sm text-center">Change the values below and watch them change live in the game</h2>
+
+<div class="row">
+	<h3 class="text-center hidden-xs hidden-sm">Game Variables</h3>
+	<div class="col-sm-4 text-center">
+		<h3><span class="label label-default">Ball Size: </span></h3>
+		<input type="number" ng-model="bd"></p>
+	</div>
+	<div class="col-sm-4 text-center">
+		<h3><span class="label label-default">Paddle Size: </span></h3>
+		<input type="number" ng-model="ph"></p>
+	</div>
+	<div class="col-sm-4 text-center">
+		<h3><span class="label label-default">Ball Speed: </span></h3>
+		<button type="button" class="btn btn-danger" ng-click="decreaseSpeed()">Decrease Speed</button>
+		<button type="button" class="btn btn-success" ng-click="increaseSpeed()">Increase Speed</button>
+	</div>
+</div>
+
+<br>
+</br>
+</div>
