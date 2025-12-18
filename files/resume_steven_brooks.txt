@@ -1,0 +1,80 @@
+STEVEN BROOKS
+Senior Software Engineer
+
+brooks.stevenjr@gmail.com
++17028615835
+linkedin.com/in/brooksstevenjr/
+Las Vegas, NV
+
+Summary
+======
+Senior Software Engineer with 9+ years building large-scale e-commerce and payment systems using AWS, microservices, and event-driven architectures. Led development of Guest Checkout at Zappos/Amazon, now driving 7-10% of company sales, and integrated Amazon Pay, contributing ~6% of sales. Experienced in Java, Python, SQL, REST APIs, CI/CD, and observability, leading cross-functional teams and mentoring engineers.
+
+
+Experience
+======
+Software Development Engineer 2
+Amazon
+11/2022 - Ongoing
+ - Led system design and managed multiple tech teams to develop Guest Checkout, now driving 7-10% of company sales
+ - Implemented Amazon Pay into Zappos checkout system, driving roughly 6% of company sales
+ - Directed migration of microservice proxy layer to AWS resulting in a 30% across the board latency reduction in all proxied requests
+ - Updated backend systems to use Amazon's secure recognition and allow for roughly 80% of all backend requests to be made safely without forcing customers to log in
+ - Served as the formal mentor for multiple junior engineers and guided through monthly 1:1s, resulting in 1 mentee promotion and positive performance reviews
+
+Software Engineer
+Zappos
+02/2019 - 11/2022
+ - Expanded microservice proxy layer functionality leading to removal of thousands of lines of redundant code/configuration
+ - Built critical security components leading to the blocking of millions of requests from bad actors daily
+ - Added several core AWS features to cart system including implemented AWS CodeDeploy for blue/green deploys and AWS ECS/Fargate for firelens AWS CloudWatch logging
+
+Software Engineer
+Everi
+09/2018 - 02/2019
+ - Normalized MSSQL databases enabling safer data operations and new feature additions
+ - Modernized Angular frontend, reducing load times by multiple seconds
+ - Optimized backend saving several seconds on high-latency requests, addressing a major pain point
+
+Jr. Software Engineer
+Influential
+04/2018 - 09/2018
+ - Debugged legacy systems solving customer reported bugs and general application improvements
+ - Created microservice to handle reactive automatic email communication that was previously manual
+
+Software Development Intern
+UNLV Network Engineering Department
+08/2016 - 04/2018
+ - Developed internal and campus wide applications saving hundreds of hours of network engineer time
+ - Created wifi.unlv.edu to help assist getting students and faculty connected to eduroam network
+
+
+Education
+======
+B.S. Computer Science - Minor in Mathematics
+University of Nevada, Las Vegas
+2013 - 05/2018
+ - GPA: 3.88 (Magna Cum Laude)
+
+
+Skills
+======
+ - Java
+ - Python
+ - C#
+ - Spring
+ - Flask
+ - SQL
+ - AWS
+ - DynamoDB
+ - CI/CD
+ - System Design
+ - Docker
+ - Leadership
+ - Emotional Intelligence
+ - Integrity
+ - Customer Service
+ - Adaptability
+ - Creativity
+ - Mentorship
+
