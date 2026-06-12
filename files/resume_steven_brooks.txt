@@ -13,9 +13,17 @@ Senior Software Engineer with 9+ years building large-scale e-commerce and payme
 
 Experience
 ======
+Senior Software Engineer
+Sprout Social
+03/2026 - Present
+ - Shipped end-to-end media/attachment support for customer messaging integrations across ve social
+networks (X, Instagram, WhatsApp, Facebook, LinkedIn), spanning multiple backend services
+ - Built a shared media-handling service, adding caching and Datadog monitoring to boost reliability,
+and leading migration from previous service
+
 Software Development Engineer 2
 Amazon
-11/2022 - Ongoing
+11/2022 - 03/2026
  - Led system design and managed multiple tech teams to develop Guest Checkout, now driving 7-10% of company sales
  - Implemented Amazon Pay into Zappos checkout system, driving roughly 6% of company sales
  - Directed migration of microservice proxy layer to AWS resulting in a 30% across the board latency reduction in all proxied requests
