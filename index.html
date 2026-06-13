@@ -1,78 +1,404 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="mysite">
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Steven Brooks Homepage</title>
-	<meta name = "viewport" content = "width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.2/angular-scroll.min.js"></script>
-	<link rel="stylesheet" href="css/homepage.css">
-	<link rel="stylesheet" href="css/bootstrap.icon-large.min.css">
-	<script type="text/javascript" src="js/site.js"></script>
-    <script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-104555211-1', 'auto');
-		ga('send', 'pageview'); 
-	</script>
+    <meta charset="UTF-8">
+    <title>Steven Brooks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/homepage.css">
 </head>
 
 <body>
-	
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
 
-			<!-- NAVBAR HEADER -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a href="#/" class="navbar-brand"><h1 id="custom-navbar-header">SB</h1></a>
-			</div>
+<nav class="navbar navbar-dark navbar-expand-md fixed-top" id="mainNav">
+    <div class="container-fluid">
+        <a href="#intro" class="navbar-brand"><span id="custom-navbar-header">SB</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavBar" aria-controls="mainNavBar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavBar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link closeOnClick navLink" href="#intro">Home</a></li>
+                <li class="nav-item"><a class="nav-link closeOnClick navLink" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link closeOnClick navLink" href="#portfolio">Projects</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle navLink" data-bs-toggle="dropdown" href="#" role="button">Resume</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" target="_blank" href="files/resume_steven_brooks.pdf">PDF Format</a></li>
+                        <li><a class="dropdown-item" target="_blank" href="files/resume_steven_brooks.txt">TXT Format</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-			<!-- MENU ITEMS -->
-			<div class="collapse navbar-collapse navbar-right" id="mainNavBar">
-				<ul class="nav navbar-nav">
-					<li du-scrollspy="intro"><a class="navLink closeOnClick" href="#intro" du-smooth-scroll>Home</a></li>
-					<li du-scrollspy="playground"><a class="navLink closeOnClick" href="#playground" du-smooth-scroll>Projects</a></li>
-					<li du-scrollspy="about"><a class="navLink closeOnClick" href="#about" du-smooth-scroll>About</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle navLink" data-toggle="dropdown" href="">Resume <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a target="_blank" href="files/resume_steven_brooks.pdf">PDF Format</a></li>
-							<li><a target="_blank" href="files/resume_steven_brooks.txt">TXT Format</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	
-		<div class="container" style="height: 100%; width: 100%; padding: 0px;">
-			<ng-view style="height: 100%; width: 100%"></ng-view>
-		</div>
+<!-- INTRO -->
+<header class="fullPage" id="intro">
+    <div class="container">
+        <div class="row align-items-center justify-content-center g-4">
+            <div class="col-auto">
+                <img class="img-fluid rounded-circle" src="img/sitepic.jpg" style="max-height: 275px; max-width: 275px;" alt="Steven Brooks">
+            </div>
+            <div class="col-md-7 text-start">
+                <h1>Hi, I'm <span id="my-name">Steven Brooks</span>,<br>a software developer.</h1>
+                <hr>
+                <h3>I'm passionate about solving problems<br>and learning new things.</h3>
+            </div>
+        </div>
+    </div>
+</header>
 
+<!-- ABOUT -->
+<div class="fullPage" id="about">
+    <div class="about-bar">
+        <h1 class="about-bar-title">About Me</h1>
+    </div>
 
+    <div class="about-wrap">
+        <div class="about-intro">
+            <p class="about-summary">Senior Software Engineer with <strong>9+ years</strong> building large-scale e-commerce and payment platforms on AWS with microservices and event-driven architectures. I led <strong>Guest Checkout</strong> at Zappos/Amazon, now driving <strong>7&ndash;10% of company sales</strong>, and integrated <strong>Amazon Pay</strong>, contributing roughly <strong>6% of sales</strong>. I work across Java, Python, and SQL, care deeply about CI/CD and observability, and love leading cross-functional teams and mentoring engineers. I started out as a biology major, but a research lab got me writing code and I switched to CS for good.</p>
+            <div class="about-degree">
+                <div class="about-degree-main">
+                    <img class="about-degree-icon" src="img/school_icon.png" alt="">
+                    <div class="about-degree-text">
+                        <span class="about-degree-deg">B.S. Computer Science &middot; Minor in Mathematics</span>
+                        <span class="about-degree-school">University of Nevada, Las Vegas &middot; May 2018</span>
+                    </div>
+                </div>
+                <span class="about-degree-honors">Magna Cum Laude &middot; GPA 3.88</span>
+            </div>
+        </div>
+        <h3 class="about-exp-label">Experience</h3>
 
-    <script>
-        //Adding so the site auto scrolls when clicked on mobile
-        $(function() {
-            $('.nav a.closeOnClick').on('click', function(){
-                if($('.navbar-toggle').css('display') !='none'){
-                    $('.navbar-toggle').trigger( "click" );
-                }
-            });
-        });
-    </script>
+        <div class="exp-md">
+            <div class="exp-rail" role="tablist" aria-label="Work history">
+                <button class="exp-tab active" data-exp="0" role="tab">
+                    <span class="exp-co">Sprout Social</span>
+                    <span class="exp-role">Senior Software Engineer</span>
+                    <span class="exp-when">Mar 2026 – Present</span>
+                </button>
+                <button class="exp-tab" data-exp="1" role="tab">
+                    <span class="exp-co">Amazon</span>
+                    <span class="exp-role">Software Development Engineer 2</span>
+                    <span class="exp-when">Nov 2022 – Mar 2026</span>
+                </button>
+                <button class="exp-tab" data-exp="2" role="tab">
+                    <span class="exp-co">Zappos</span>
+                    <span class="exp-role">Software Engineer</span>
+                    <span class="exp-when">Feb 2019 – Nov 2022</span>
+                </button>
+                <button class="exp-tab" data-exp="3" role="tab">
+                    <span class="exp-co">Everi</span>
+                    <span class="exp-role">Software Engineer</span>
+                    <span class="exp-when">Sep 2018 – Feb 2019</span>
+                </button>
+                <button class="exp-tab" data-exp="4" role="tab">
+                    <span class="exp-co">Influential</span>
+                    <span class="exp-role">Jr. Software Engineer</span>
+                    <span class="exp-when">Apr 2018 – Sep 2018</span>
+                </button>
+                <button class="exp-tab" data-exp="5" role="tab">
+                    <span class="exp-co">UNLV Network Engineering</span>
+                    <span class="exp-role">Software Development Intern</span>
+                    <span class="exp-when">Aug 2016 – Apr 2018</span>
+                </button>
+                <button class="exp-tab" data-exp="6" role="tab">
+                    <span class="exp-co">UNLV Network Engineering</span>
+                    <span class="exp-role">Student Network Technician</span>
+                    <span class="exp-when">Oct 2015 – Aug 2016</span>
+                </button>
+                <button class="exp-tab" data-exp="7" role="tab">
+                    <span class="exp-co">Schiller Laboratory</span>
+                    <span class="exp-role">Undergraduate Research Assistant</span>
+                    <span class="exp-when">Aug 2013 – Oct 2015</span>
+                </button>
+            </div>
+
+            <div class="exp-detail">
+                <div class="exp-pane active" data-pane="0">
+                    <span class="exp-when-top">March 2026 – Present</span>
+                    <h3>Senior Software Engineer</h3>
+                    <h4>Sprout Social</h4>
+                    <ul>
+                        <li>Shipped end-to-end media/attachment support for customer messaging integrations across five social networks (X, Instagram, WhatsApp, Facebook, LinkedIn), spanning multiple backend services</li>
+                        <li>Built a shared media-handling service, adding caching and Datadog monitoring to boost reliability, and leading migration from previous service</li>
+                    </ul>
+                </div>
+                <div class="exp-pane" data-pane="1">
+                    <span class="exp-when-top">November 2022 – March 2026</span>
+                    <h3>Software Development Engineer 2</h3>
+                    <h4>Amazon</h4>
+                    <ul>
+                        <li>Led system design and managed multiple tech teams to develop Guest Checkout, now driving 7-10% of company sales</li>
+                        <li>Implemented Amazon Pay into Zappos checkout system, driving roughly 6% of company sales</li>
+                        <li>Directed migration of microservice proxy layer to AWS resulting in a 30% across the board latency reduction in all proxied requests</li>
+                        <li>Updated backend systems to use Amazon's secure recognition and allow for roughly 80% of all backend requests to be made safely without forcing customers to log in</li>
+                        <li>Served as the formal mentor for multiple junior engineers and guided through monthly 1:1s, resulting in 1 mentee promotion and positive performance reviews</li>
+                    </ul>
+                </div>
+                <div class="exp-pane" data-pane="2">
+                    <span class="exp-when-top">February 2019 – November 2022</span>
+                    <h3>Software Engineer</h3>
+                    <h4>Zappos</h4>
+                    <ul>
+                        <li>Expanded microservice proxy layer functionality leading to removal of thousands of lines of redundant code/configuration</li>
+                        <li>Built critical security components leading to the blocking of millions of requests from bad actors daily</li>
+                        <li>Added several core AWS features to cart system including implemented AWS CodeDeploy for blue/green deploys and AWS ECS/Fargate for firelens AWS CloudWatch logging</li>
+                    </ul>
+                </div>
+                <div class="exp-pane" data-pane="3">
+                    <span class="exp-when-top">September 2018 – February 2019</span>
+                    <h3>Software Engineer</h3>
+                    <h4>Everi</h4>
+                    <ul>
+                        <li>Backend engineering using C# and MSSQL</li>
+                        <li>Frontend development using Angular</li>
+                        <li>Process optimization and architectural improvements to existing systems</li>
+                    </ul>
+                </div>
+                <div class="exp-pane" data-pane="4">
+                    <span class="exp-when-top">April 2018 – September 2018</span>
+                    <h3>Jr. Software Engineer</h3>
+                    <h4>Influential</h4>
+                    <ul>
+                        <li>Backend engineering using Node.js and MySql</li>
+                        <li>Focus on microservice architecture and system design</li>
+                        <li>Debugging legacy code and systems</li>
+                    </ul>
+                </div>
+                <div class="exp-pane" data-pane="5">
+                    <span class="exp-when-top">August 2016 – April 2018</span>
+                    <h3>Software Development Intern</h3>
+                    <h4>UNLV Network Engineering</h4>
+                    <ul>
+                        <li>Develop full stack applications using Angular.js, JS, Bootstrap, HTML, Flask, Python, Node.js, MySql</li>
+                        <li>Maintain and improve department's current back end systems</li>
+                        <li>Make alterations and additions to various MySQL databases</li>
+                        <li>Assist with network maintenance and other duties mentioned in previous position</li>
+                    </ul>
+                </div>
+                <div class="exp-pane" data-pane="6">
+                    <span class="exp-when-top">October 2015 – August 2016</span>
+                    <h3>Student Network Technician</h3>
+                    <h4>UNLV Network Engineering</h4>
+                    <ul>
+                        <li>Installed network hardware such as switches, access points, UPS, etc</li>
+                        <li>Assisted with network maintenance, upkeep, inventory control, tracking, and replacement</li>
+                        <li>Programmed scripts to improve efficiency of network maintenance</li>
+                    </ul>
+                </div>
+                <div class="exp-pane" data-pane="7">
+                    <span class="exp-when-top">Aug 2013 – Oct 2015</span>
+                    <h3>Undergraduate Research Assistant</h3>
+                    <h4>Schiller Laboratory</h4>
+                    <ul>
+                        <li>HIV ToolBax 2 Project</li>
+                        <li>GoMAP Project</li>
+                        <li>C-Terminome Project</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PORTFOLIO -->
+<div id="portfolio" class="fullPage">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+                <h1 style="color: #4aaca8"><b>Portfolio</b></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-4 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#clChatModal" role="button">
+                    <img class="img img-fluid" src="img/clchat.png" alt="clChat">
+                </a>
+                <a data-bs-toggle="modal" data-bs-target="#clChatModal" role="button">
+                    <h3 class="projTitles">clChat</h3>
+                </a>
+                <p>clChat is a chatting application, that works in your terminal. It utilizes the same protocol that gaming systems and torrent programs use in order to allow someone to start a chat server from their house, all without fiddling with any network equipment.</p>
+            </div>
+            <div class="col-12 col-sm-4 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#mactrackModal" role="button">
+                    <img class="img img-fluid" src="img/mactrack.jpg" alt="Mactrack">
+                </a>
+                <a data-bs-toggle="modal" data-bs-target="#mactrackModal" role="button">
+                    <h3 class="projTitles">Mactrack</h3>
+                </a>
+                <p>Mactrack is an application internally used by the network engineering team to track and analyze network usage over time; making monitoring and auditing such metrics a trivial and painless task.</p>
+            </div>
+            <div class="col-12 col-sm-4 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#wifiEduModal" role="button">
+                    <img class="img img-fluid" src="img/wifi.jpg" alt="wifi.unlv.edu">
+                </a>
+                <a data-bs-toggle="modal" data-bs-target="#wifiEduModal" role="button">
+                    <h3 class="projTitles">wifi.unlv.edu</h3>
+                </a>
+                <p>wifi.unlv.edu is the site that connects UNLV students, staff, and faculty to the eduroam network. It features a nice user interface that utilizes an operating system detecting instruction page/modal. My involvement involved all of the front end work, making sure the site fit to the standards of an established designer.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#cltModal" role="button">
+                    <img class="img img-fluid" src="img/clt.png" alt="CLT">
+                </a>
+                <a data-bs-toggle="modal" data-bs-target="#cltModal" role="button">
+                    <h3 class="projTitles">CLT</h3>
+                </a>
+                <p>Convention Logistics Tracker was the <u>First Place</u> winning entry into UNLV's 2017 Senior Design competition for the Computer Science category. The project had many layers to it, with the end result being a software suite that connected convention goers with organizers.</p>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#pskModal" role="button">
+                    <img class="img img-fluid" src="img/psk.jpg" alt="Wi-Fi PSK Application">
+                </a>
+                <a data-bs-toggle="modal" data-bs-target="#pskModal" role="button">
+                    <h3 class="projTitles">Wi-Fi PSK Application</h3>
+                </a>
+                <p>I wrote UNLV's Wi-Fi PSK Application in order to make an easy to use system to manage access on to UNLV's PSK net. It grants IT groups outside of the network engineering department to control user access to the net, adding and removing users by MAC address.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODALS -->
+
+<div class="modal fade" id="wifiEduModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modalAesHeader">
+                <button type="button" class="modalCloseBtn" data-bs-dismiss="modal" aria-label="Close">&#215;</button>
+            </div>
+            <div class="modal-body projModalOuterTextBody">
+                <img class="img img-fluid d-block w-100" src="img/wifi_screenshot.png" alt="wifi.unlv.edu screenshot">
+                <div class="text-center">
+                    <a href="https://wifi.unlv.edu" target="_blank" style="color: black;"><h1>wifi.unlv.edu</h1></a>
+                    <br>
+                    <p class="text-start"><span class="devUsing">Developed using:</span> Angular.js, Bootstrap, JavaScript, HTML, CSS</p>
+                    <p class="text-start">wifi.unlv.edu is the site that connects UNLV students to the eduroam network. It features a nice user interface, with an operating system detecting instruction page/modal. My involvement involved all of the front end work, making sure the site fit to the standards of an established designer.</p>
+                    <p class="text-start">Note: Since I have worked on this, it looks a little different now. I am happy to see (what once was) my baby grow. The dev who picked it up is amazing and I am so happy to see what they have done with it :)</p>
+                    <br><br>
+                    <a href="https://wifi.unlv.edu" target="_blank"><button class="btn">Visit site</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mactrackModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modalAesHeader">
+                <button type="button" class="modalCloseBtn" data-bs-dismiss="modal" aria-label="Close">&#215;</button>
+            </div>
+            <div class="modal-body projModalOuterTextBody">
+                <img class="img img-fluid d-block w-100" src="img/mactrack_screenshot.png" alt="Mactrack screenshot">
+                <div class="text-center">
+                    <h1>Mactrack</h1>
+                    <br>
+                    <p class="text-start"><span class="devUsing">Developed using:</span> Flask, Angular.js, MySQL, Bootstrap, JavaScript, HTML, CSS</p>
+                    <p class="text-start">Mactrack is an internal application I wrote as an intern at the Network Engineering department of UNLV. The purpose of the site is to track and analyze network usage over time. It allows the Network Engineering department to get an in-depth look at every switch and router port on campus, seeing what kinds of end user devices are active on them, as well as other network information.</p>
+                    <p class="text-start">It was my very first real project, and perhaps what made me realize I enjoyed programming as much as I do. While I wanted it to look nice, there was a large focus on backend functionality. The server side programming was fairly complex, in that it requires crawling to all of the devices on campus, extracting useful information from them, and putting that information into a database. I worked on this portion along with one of the senior network engineers at UNLV.</p>
+                    <p class="text-start">The backend for the site was written all by me however. It goes into the database, and extracts the information, formatting it into easily consumable JSON objects that the front end then goes to use to present information onto the users (in this case, the network engineers for campus).</p>
+                    <p class="text-start">Because of the sensitive nature of the data on the site, it is only accessible to a select group of people. However, in order to show some of the more basic functionality, I have taken the site and largely skimmed it down in order to provide a demo for visitors to my site.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="clChatModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modalAesHeader">
+                <button type="button" class="modalCloseBtn" data-bs-dismiss="modal" aria-label="Close">&#215;</button>
+            </div>
+            <div class="modal-body projModalOuterTextBody">
+                <img class="img img-fluid d-block w-100" src="img/clchat.png" alt="clChat screenshot">
+                <div class="text-center">
+                    <a href="https://github.com/stevenbrookslv/clChat" target="_blank" style="color: black;"><h1>clChat</h1></a>
+                    <br>
+                    <p class="text-start"><span class="devUsing">Developed using:</span> Python</p>
+                    <p class="text-start">clChat is a small program that allows for instant messaging via a command line on Linux or Mac computers, with no need for a central server or relay point. It allows for communication on local area networks OR across the internet as a whole. The local area network communication is fairly simple in that the only requirement is that users be on the same net. For communication across the internet however, a router that is compatible with the Universal Plug and Play protocols (UPNP) is necessary. On most regular home internet connections, this is a non issue. Places where enterprise networking is in place (think universities) will most likely not be able to use this program however.</p>
+                    <p class="text-start">Implementing the base chatting (for LANs) was not difficult at all. A server computer opens up a socket, and a client user connects to that socket. After entering usernames, the users are able to send messages back and forth. Input is understood by the program a single character at a time. This allows for storing the unsent message by the program. If User_1 is in the middle of a message and User_2 sends a message during this time, the program sends the needed amount of backspace characters to the terminal of User_1, prints User_2's message, then prints the stored version of User_1's message back to the screen.</p>
+                    <p class="text-start">I wanted the program to be able to work over the internet however as well. In thinking about this problem, I realized the immediate solution of having users open up ports on their routers manually was far from user friendly, even for the technically inclined audience the program is meant for. That is where UPNP comes into play. A library for communication with routers was already written in C, with Python bindings also being present. I figured out how to use this library, and implemented it into clChat, automating the process for the server user of figuring out their public IP, deciding on a good port to use, and manually adding the port mapping to their router.</p>
+                    <br><br>
+                    <a href="https://github.com/stevenbrookslv/clChat" target="_blank"><button class="btn">clChat on Github</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="pskModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modalAesHeader">
+                <button type="button" class="modalCloseBtn" data-bs-dismiss="modal" aria-label="Close">&#215;</button>
+            </div>
+            <div class="modal-body projModalOuterTextBody">
+                <img class="img img-fluid d-block w-100" src="img/psk_screenshot.png" alt="Wi-Fi PSK Application screenshot">
+                <div class="text-center">
+                    <h1>Wi-Fi PSK Application</h1>
+                    <br>
+                    <p class="text-start"><span class="devUsing">Developed using:</span> Node.js, Angular.js, Flask, Bootstrap, JS, HTML, CSS</p>
+                    <p class="text-start">I wrote UNLV's Wi-Fi PSK (Pre-Shared Key) Application in order to make an easy to use system to manage access on to UNLV's PSK net. It grants IT groups outside of the network engineering department to control user access to the net, adding and removing users by MAC address. Before this system was developed, people at UNLV only had Wi-Fi WPA-2 Enterprise as a viable way for mobile devices to access the internet. This solution sought to enable people to access a PSK network in order to get devices that aren't compatible with WPA-2 Enterprise systems online wirelessly.</p>
+                    <p class="text-start">The network portion of this project was handled with the help of one of the Network Engineers at UNLV. In order for the system to be manageable, we needed some way to limit use to people permitted to use the network. We chose to do this via access restrictions based on a devices MAC address being registered. The system I developed allowed for people outside of the network team to manage the devices allowed on this net, as well as the potential for users to manage their devices themselves.</p>
+                    <p class="text-start">The system itself is comprised of a few different parts. There is the front end portal for managing access to the net, a front end portal for managing the administration of the site, an authentication server for handling the checking of administrator credentials, and a back end server for handling data transfer to people managing the site.</p>
+                    <p class="text-start">The front end portion of the system is a basic Bootstrap/Angular.js application. It communicates with the authentication and backend servers via a JSON REST API.</p>
+                    <figure class="figure">
+                        <img src="img/psk2.png" class="figure-img img-fluid rounded" alt="User Admin portal">
+                        <figcaption class="figure-caption text-white">User Admin portal</figcaption>
+                    </figure>
+                    <br>
+                    <figure class="figure">
+                        <img src="img/psk3.png" class="figure-img img-fluid rounded" alt="Super User portal">
+                        <figcaption class="figure-caption text-white">Super User portal</figcaption>
+                    </figure>
+                    <br>
+                    <p class="text-start">The authentication for the site was a unique challenge for me. The system required multiple different roles for the site. At the lowest level, users needed to be able to log in and manage their own personal devices. The backend routes required to enable this feature were created, but administrative red tape prevents the deployment of it. The viable user types included admins who could add clients and devices connected to those clients, as well as super users who could add LDAP groups to check against for admin accounts. The authentication server works by checking LDAP credentials sent when a user accesses the site, ensuring first that the username sent was in a permitted AD group, then checking that the password associated with that user was correct. I chose to implement the functionality of the authentication server in node.js, based off of the libraries written that made this task easier.</p>
+                    <p class="text-start">The meat of the backend is implemented in Flask. The front end communicates with this backend in order to handle all data transfer. The authentication server also communicates with it briefly in order to check group ownership of users attempting to log into the website.</p>
+                    <p class="text-start">I have explained a lot here, and this project was fairly complex with a lot of moving parts. It took a few months to complete. Beyond the completion of the actual code needed to run it, working with various teams and people in the networking department was required to make it a reality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="cltModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modalAesHeader">
+                <button type="button" class="modalCloseBtn" data-bs-dismiss="modal" aria-label="Close">&#215;</button>
+            </div>
+            <div class="modal-body projModalOuterTextBody">
+                <img class="img img-fluid d-block w-100" src="img/clt_group.jpeg" alt="CLT team photo">
+                <div class="text-center">
+                    <h1>Convention Logistics Tracker</h1>
+                    <p class="text-start">My senior design project consisted of eight team members (I am third from the right!) creating a software suite called Convention Logistics Tracker. We won First Place at the 2017 Senior Design Competition for the Computer Science category. I was the lead backend developer, with the responsibility of getting the backend team up to speed on proven techniques I had given my experience. I also did devops for the team, ensuring that we had a reliable backend API that the app and frontend teams could rely on for their HTTP calls.</p>
+                    <figure class="figure">
+                        <img src="img/clt_screenshot.gif" class="figure-img img-fluid rounded" alt="CLT frontend gif">
+                        <figcaption class="figure-caption text-white">Gif of the front end while the site was live</figcaption>
+                    </figure>
+                    <br>
+                    <p class="text-start">The suite contains three software packages: organizer portal, exhibitor portal, and consumer app. In the organizer portal, conference organizers are able to update app information and conference details, such as floor plans, weekly/daily schedules, exhibitors lists, news, and so forth. The exhibitor portal is either filled out by a conference organizer or the exhibitor themselves. Here, exhibitors can upload a description, company logo, and news items for their own booth. For the consumer app, the app developers focused on creating an Android app that displayed all the data pulled from the Exhibitor and Organizer portal (using the REST API built by the backend team). Features of the app include News, Exhibitors List, Floor Plan, and Schedule.</p>
+                    <p class="text-start">As leader of the backend team, not only did I write a good portion of the code, but also helped our other amazing backend developer get up to speed with the basics of how a REST API based backend works. By the end of it, the backend team had a very effective work pipeline working. This process consisted of us finding out exactly what the needs of the frontend and app teams were and figuring out if the database had the structure and information required to fulfill those needs.</p>
+                    <figure class="figure">
+                        <img src="img/clt_screenshot_2.gif" class="figure-img img-fluid rounded" alt="CLT authentication gif">
+                        <figcaption class="figure-caption text-white">We used AuthO for authentication into the platform</figcaption>
+                    </figure>
+                    <br>
+                    <p class="text-start">This project was probably one of my most fun ones to date. While I have worked on plenty of projects alone or with a partner or two, this project brought together a good group of people all with varied qualities to the table to create one functional product. The process of working with a team and using effective communication in order to understand how you can best contribute your cog into the machine with many moving parts that was a project such as this was interesting to say the least. It wasn't necessarily easy, but was absolutely one of the best learning experiences I have had the opportunity to go through.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/site.js"></script>
 </body>
-</html>                                		
+</html>

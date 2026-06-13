@@ -1,254 +1,474 @@
-html{
-	height: 100%;
-	width: 100%;
+html {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
 }
 
-
-body{
-	height: 100%;
-	width: 100%;
+body {
+    height: 100%;
+    width: 100%;
 }
 
-.modal-open .modal{
-    overflow-y: scroll;
+/* Navbar */
+#mainNav {
+    background-color: #222;
+    border-bottom: 1px solid #080808;
+    padding: 0;
 }
 
-.modalAesHeader{
-    padding: 0px !important;
-    background-color: #1f1e1c;
+/* Desktop: pad nav-links to exactly match brand height — no flex stretching needed */
+@media (min-width: 768px) {
+    #mainNav > .container-fluid {
+        padding-right: 1rem;
+    }
+
+    /* #mainNav gives this higher specificity than the global .navbar-nav .nav-link rule below */
+    #mainNav .navbar-nav .nav-link {
+        padding: 18px 15px;
+    }
 }
 
-.modalAesHeader button{
-    color: white;
-    opacity: 1;
-    padding-right: 15px;
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 6px;
+    margin-right: 4px;
 }
 
-.projModalOuterTextBody{
-    background-color: #1f1e1c;
-    color: white;
+.navbar-nav .nav-item.active {
+    background-color: #000;
 }
 
-.projModalOuterTextBody h1,h4,.devUsing{
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 0.875rem;
+    line-height: 1;
+}
+
+.navLink {
+    font-weight: bold;
+    color: white !important;
+}
+
+.navbar-brand {
+    padding: 9px 0;
+    line-height: 1;
+    color: #4aaca8 !important;
+}
+
+#custom-navbar-header {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+/* Sections */
+.fullPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    /* JS locks --vph to a fixed px height on load so the section can't resize as the iOS
+       address bar hides/shows (the cause of the scroll jump); svh is the no-JS fallback */
+    min-height: var(--vph, 100svh);
+    padding: 100px 0;
+    background-size: cover;
+}
+
+#intro {
+    color: #fff;
+    background: linear-gradient(to right, #222c4f, #1d494d);
+}
+
+#my-name {
+    color: #4aaca8 !important;
+    font-weight: bold;
+}
+
+#portfolio {
+    background-color: #fff;
+    padding: 25px 0;
+}
+
+#about {
+    color: #fff;
+    /* subtle top-to-teal gradient gives the summary area a hint of depth, settling
+       into the same teal the experience master-detail was approved on */
+    background: linear-gradient(180deg, #38606f, #45768c 45%);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    min-height: var(--vph, 100svh);
+}
+
+/* Portfolio */
+.projTitles {
+    color: #1d494d;
+}
+
+/* About: full-width header bar */
+.about-bar {
+    width: 100%;
+    background-color: #2c4d59;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.about-bar-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 2rem;
     color: #4aaca8;
 }
 
-.projModalOuterTextBody p{
+/* About: intro summary + degree card */
+.about-wrap {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 20px 34px;
+}
+
+.about-intro {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.about-summary {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    margin: 0 0 24px;
+}
+
+.about-summary strong {
+    color: #c9ece9;
+    font-weight: 700;
+}
+
+.about-degree {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #4aaca8;
+    border-radius: 4px;
+    padding: 14px 24px;
+}
+
+.about-degree-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.about-degree-icon {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    opacity: 0.9;
+}
+
+.about-degree-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-degree-deg {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.about-degree-school {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.about-degree-honors {
+    color: #9fe0db;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    padding-left: 16px;
+}
+
+/* Mobile: stack honors under the degree, keeping icon left of the text */
+@media (max-width: 767.98px) {
+    .about-degree {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .about-degree-honors {
+        padding-left: 0;
+    }
+}
+
+.about-exp-label {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    color: #c9ece9;
+    margin: 0 0 6px;
+}
+
+/* GitHub button */
+#gitButton {
+    background-color: #1d494d !important;
+    border-radius: 0 !important;
+    color: #fff;
+}
+
+#gitButton:hover {
+    background-color: #fff !important;
+    color: #1d494d !important;
+}
+
+/* Modals */
+.modal-open .modal {
+    overflow-y: scroll;
+}
+
+.modalAesHeader {
+    --bs-modal-header-border-width: 0;
+    background-color: #1f1e1c;
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px 15px !important;
+    border: none !important;
+}
+
+.modalCloseBtn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+.modalCloseBtn:hover {
+    color: #fff;
+}
+
+.projModalOuterTextBody {
+    background-color: #1f1e1c;
+    color: white;
+}
+
+.projModalOuterTextBody h1,
+.projModalOuterTextBody h4,
+.devUsing {
+    color: #4aaca8;
+}
+
+.projModalOuterTextBody p {
     font-size: 16px;
 }
 
-.devUsing{
+.devUsing {
     color: #4aaca8;
     font-weight: bold;
     font-size: 20px;
 }
 
-.projModalOuterTextBody button{
+.projModalOuterTextBody .btn {
     color: #4aaca8;
-    border-radius: 0px;
+    border-radius: 0;
     border: 4px solid #4aaca8;
     background-color: transparent;
     font-size: 22px;
 }
 
-.projModalOuterTextBody button:focus,button:hover,button:active{
+.projModalOuterTextBody .btn:hover,
+.projModalOuterTextBody .btn:focus,
+.projModalOuterTextBody .btn:active {
     color: white !important;
 }
 
-.fullPage{
-    display: table;
+/* Experience: master–detail (company rail + detail pane) */
+.exp-md {
+    display: flex;
+    gap: 32px;
     width: 100%;
-    height: 100%;
-    padding: 100px 0;
-    text-align: center;
-    background-size: cover !important;
-
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px 30px;
+    align-items: stretch;
 }
 
-.topProjParagraphs{
-    padding-bottom: 25px;
+.exp-rail {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    padding-right: 8px;
 }
 
-.projTitles{
-    color: #1d494d;
+.exp-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    text-align: left;
+    background: none;
+    border: none;
+    border-left: 3px solid transparent;
+    padding: 9px 14px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    transition: background-color .15s, border-color .15s, color .15s;
 }
 
-.topProjParagraphs{
-    
-}
-
-#intro {
+.exp-tab:hover {
+    background: rgba(255, 255, 255, 0.06);
     color: #fff;
-    background: #616161;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right,#222c4f,#1d494d);
-    background: linear-gradient(to right, #222c4f,#1d494d);
-    background-color: #000;
 }
 
-#about {
+.exp-tab.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: #4aaca8;
     color: #fff;
-    background-color: #222c4f;
-    padding-top: 0px;
-    padding-bottom: 0px;
 }
 
-#playground{
-    background-color: #ffffff;
-    padding: 25px 0px 0px 0px;
+.exp-tab .exp-co {
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.2;
 }
 
-#pong-game{
-    background-color: #4aaca8
+.exp-tab .exp-role {
+    font-size: 0.82rem;
+    opacity: 0.8;
 }
 
-
-#intro .intro-body {
-    display: table-cell;
-    vertical-align: middle
+.exp-tab .exp-when {
+    font-size: 0.72rem;
+    color: #4aaca8;
+    font-weight: 600;
+    margin-top: 1px;
 }
 
-#intro .intro-body .brand-heading {
-    font-size: 32px;
-    word-wrap: break-word
+.exp-detail {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-top: 4px;
 }
 
-#intro .intro-body .intro-text {
-    font-size: 16px
+.exp-pane {
+    display: none;
 }
 
-#playground-well{
-    background: #4aaca8;
+.exp-pane.active {
+    display: block;
+    animation: expFade .25s ease;
 }
 
-.navLink{
-	font-weight: bold;
-	color: white !important;
+.exp-pane .exp-when-top {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #4aaca8;
+    margin-bottom: 4px;
 }
 
-.navbar-brand{
-	padding: 0px;
-	color: #4aaca8 !important;
+.exp-pane h3 {
+    margin: 0;
 }
 
-#custom-navbar-header{
-	margin-top: 0px !important;
-	padding: 6px 0px 0px 12px;
+.exp-pane h4 {
+    color: #fff;
+    opacity: 0.85;
+    margin: 2px 0 16px;
 }
 
-#my-name{
-	color: #4aaca8 !important;
-	font-weight: bold;
+.exp-pane ul {
+    padding-left: 20px;
+    margin: 0;
 }
 
-.aboutPicUnderlines{
-    margin:8px 0px 3px 0px;
+.exp-pane li {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-.aboutImage{
-    max-height: 60px; 
-    max-width: 60px;
+@keyframes expFade {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-.aboutLabels{
-    margin:5px 0px 0px 0px;
-}
+/* Mobile: rail becomes a horizontal scroller above the detail */
+@media (max-width: 767.98px) {
+    .exp-md {
+        flex-direction: column;
+        gap: 16px;
+        padding: 8px 16px 24px;
+    }
 
-.aboutTri{
-    padding-top: 10px;
-}
+    .exp-rail {
+        flex: none;
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-right: 0;
+        padding-bottom: 8px;
+        gap: 8px;
+    }
 
-@media (max-width: 768px) {
-    #aboutHeaderIconBox{
-        margin-bottom: -1%;
-        padding-bottom: .5%;
+    .exp-tab {
+        flex: 0 0 auto;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+    }
+
+    .exp-tab.active {
+        border-left: none;
+        border-bottom-color: #4aaca8;
+    }
+
+    .exp-tab .exp-role {
+        display: none;
     }
 }
 
-@media (max-width: 700px) {
-    #aboutHeaderIconBox{
-        margin-bottom: -7%;
-        padding-bottom: 3.5%;
+/* Mobile navbar */
+@media (max-width: 767.98px) {
+    /* Replicate Bootstrap 3's negative margins so active highlight spans edge-to-edge */
+    .navbar-nav {
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        line-height: 1.5;
+    }
+
+    .navbar-nav .nav-item.active {
+        width: 100%;
+    }
+
+    #mainNav .navbar-collapse {
+        border-top: 1px solid #101010;
+        /* inset highlight keeps the separator visible even against the black active item */
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 }
-
-@media (max-width: 375px) {
-    #aboutHeaderIconBox{
-        margin-bottom: -7%;
-        padding-bottom: .5%;
-    }
-}
-#aboutEdu{
-    min-height: 50vh; 
-}
-
-.aboutDetail{
-    min-height: 60vh; 
-    display: flex; 
-    align-items: center;
-}
-
-#gitButton{
-    background-color: #1D494D !important; 
-    border-radius: 0 !important;
-    color: #ffffff; 
-}
-
-#gitButton:hover{
-    background-color: #ffffff !important; 
-    color: #1D494D !important; 
-}
-
-/*
-Timeline stuff
-*/
-.timeline-container {
-  max-width: 1024px;
-  width: 30%;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-
-.timeline-item {
-  padding: 3em 2em 2em;
-  position: relative;
-  border-left: 2px solid rgba(0, 0, 0, 0.3);
-}
-.timeline-item p {
-  font-size: 1rem;
-}
-
-.timeline-item h2 {
-    margin: 0px;
-}
-.timeline-item h3 {
-    margin-top: 10px;
-}
-.timeline-item::before {
-  content: attr(date-is);
-  position: absolute;
-  left: 2em;
-  font-weight: bold;
-  top: 1em;
-  display: block;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-.timeline-item::after {
-  width: 10px;
-  height: 10px;
-  display: block;
-  top: 1em;
-  position: absolute;
-  left: -7px;
-  border-radius: 10px;
-  content: '';
-  background: white;
-}
-
-@media (max-width: 1024px) {
-    .timeline-container{
-        width: 90%;
-    }
-}
-
